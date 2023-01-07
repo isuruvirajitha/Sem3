@@ -46,5 +46,30 @@ class Employee{
 
         $con->close();
     }
+
+    public static function getAll(){
+
+        $employees =[];
+        $con = new mysqli("localhost","root","","sem3-online");
+        
+        $sql = "SELECT * FROM employee";
+
+        $rs = $con->query($sql);
+
+        while ($row = $rs->fetch_assoc()) {
+            $emp = new Employee();
+            $emp->set_id($row['id']);
+            $emp->set_fname($row['fname']);
+            $emp->set_lname($row['lname']);
+            $emp->set_gender($row['gender']);
+            array_push($employees,$emp);
+        }
+
+
+
+        $con->close();
+
+        return $employees;
+    }
 }
 ?>
