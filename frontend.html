@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>AJAX - Practical</title>
+    <script>
+        function load() {
+            // create ajax object
+            var ajax = new XMLHttpRequest();
+
+
+            //ready state - 0-4
+            // 0 - uninitialized
+            // 1 - loding
+            // 2 - loaded
+            // 3 - process
+            // 4 - complete
+
+            //status 100 - 599
+                // 100 - 199 - Infromational Responce
+                    //100 - continue
+
+                // 200 - 299 - Success Responce
+                    // 200 - success
+                    // 201 - created
+                    // 202 - accepted
+
+                // 300 - 399 - Redirectional Message
+                    //301 - Moved permanently
+
+                // 400 - 499 - Client Error
+                    //400 - Bad request
+                    //403 - fobidden
+                    //404 - not found
+
+                // 500 - 599 - Serverside Error
+                    //500 - Internal Sever Error
+                    //501 - Not Implemented
+                    //503 - Sevevice unavailable
+
+
+
+            ajax.onreadystatechange = function (){
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById("txt").innerHTML = this.responseText;
+                }
+            }
+
+            ajax.open("GET","http://localhost/online/backend.php",true);
+
+            ajax.send();
+
+
+        }
+    </script>
+</head>
+<body>
+    <p id="txt"></p>
+    <button onclick="load()">Click Me</button>
+</body>
+</html>
