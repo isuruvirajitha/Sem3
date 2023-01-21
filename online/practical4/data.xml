@@ -1,0 +1,17 @@
+<FILMS>
+    <FILM>
+        <NAME>A</NAME>
+        <RATING>5</RATING>
+        <CATEGORY>Horrer</CATEGORY>
+    </FILM>
+    <FILM>
+        <NAME>B</NAME>
+        <RATING>4.9</RATING>
+        <CATEGORY>Commedy</CATEGORY>
+    </FILM>
+    <FILM>
+        <NAME>C</NAME>
+        <RATING>3</RATING>
+        <CATEGORY>Adventure</CATEGORY>
+    </FILM>
+</FILMS>

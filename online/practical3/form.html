@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Document</title>
+    <script>
+        function load() {
+            var fname = document.getElementById("fname").value;
+            var sname = document.getElementById("sname").value;
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function (){
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("fullname-area").innerHTML = this.responseText;
+                }
+            }
+
+            ajax.open("POST","processor.php",true);
+            ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            ajax.send("fname="+fname+"&sname="+sname);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>First Name: <input type="text" id="fname"/></label><br/><br/>
+        <label>Second Name: <input type="text" id="sname"/></label><br/><br/>
+        <button type="button" onclick="load()">Submit</button>
+    </form>
+    <div id="fullname-area"></div>
+</body>
+</html>

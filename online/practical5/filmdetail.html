@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Document</title>
+    <script>
+        function load() {
+
+            var ajax = new XMLHttpRequest();
+
+            var str = "";
+
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    var data = JSON.parse(this.responseText);
+
+
+                    for (var i = 0; i < data.length; i++) {
+                        str += data[i].name;
+                        str += "<br/>";
+                        
+                    }
+
+                    document.getElementById("filmdetailarea").innerHTML = str;
+
+                }
+            }
+
+
+            ajax.open("GET", "data.json", true);
+            ajax.send();
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="load()">Load</button>
+    <div id="filmdetailarea">
+
+    </div>
+</body>
+
+</html>

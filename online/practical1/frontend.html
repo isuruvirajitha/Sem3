@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>AJAX - Practical</title>
+    <script>
+        
+        function loadpage1() {
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function (){
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("page-area").innerHTML = this.responseText;
+                }
+            }
+
+            ajax.open("GET","http://localhost/online/practical1/page1.php",true);
+
+            ajax.send();
+
+        }
+
+        function loadpage2() {
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function (){
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("page-area").innerHTML = this.responseText;
+                }
+            }
+
+            ajax.open("GET","http://localhost/online/practical1/page2.php",true);
+
+            ajax.send();
+
+        }
+
+        function loadpage3() {
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function (){
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("page-area").innerHTML = this.responseText;
+                }
+            }
+
+            ajax.open("GET","http://localhost/online/practical1/page3.php",true);
+
+            ajax.send();
+
+        }
+        
+           
+    </script>
+</head>
+<body>
+    <button onclick="loadpage1()">Page 1</button>
+    <button onclick="loadpage2()">Page 2</button>
+    <button onclick="loadpage3()">Page 3</button>
+    <div id="page-area"></div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+        {
+            "name" : "A",
+            "rating" : "5",
+            "category" : "Horrer"
+        },
+        {
+            "name" : "B",
+            "rating" : "4.9",
+            "category" : "Commedy"
+        },
+        {
+            "name" : "C",
+            "rating" : "3",
+            "category" : "Adventure"
+        }
+]

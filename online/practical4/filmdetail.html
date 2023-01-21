@@ -1,0 +1,36 @@
+<html>
+<head><title>Document</title>
+    <script>
+        function load() {
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function (){
+                if (this.readyState == 4 && this.status == 200) {
+                    var xmldata = this.responseXML;
+                    var names = xmldata.getElementsByTagName("NAME");
+
+                    var str = "";
+
+                    for (var i = 0; i < names.length; i++) {
+                        str += names[i].textContent;// str = str + names[i].textContent
+                        str += "<br/>";
+                        
+                    }
+                    //console.log(str);
+                    document.getElementById("filmdetailarea").innerHTML= str;
+                }
+            }
+
+            ajax.open("GET","data.xml",true);
+            ajax.send();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="load()">Load</button>
+    <div id="filmdetailarea">
+
+    </div>
+</body>
+</html>

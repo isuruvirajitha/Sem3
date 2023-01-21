@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+        function sayName(){
+            //var name = document.getElementById("txtName").value;
+            var name = $("#txtName").val();
+            alert ("Hi "+name);
+
+        }
+    </script>
+</head>
+<body>
+    Name : <input id="txtName" type="text"/>
+    <button onclick="sayName()">Click Here</button>
+</body>
+</html>
