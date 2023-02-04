@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Document</title>
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#btn").click(function (){
+                $("#output").load('backend.php');
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">Click</button>
+   <p id="output"></p>
+</body>
+
+</html>

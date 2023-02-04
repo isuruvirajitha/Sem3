@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                console.log($("#txtName"));
+                var name = $("#txtName").val();
+                var address = $("#txtAddress").val();
+                //alert(name + " - "+ address);
+
+                $("#output").html("My name is " + name + ". My address is " + address);
+
+                $("#txtName").val("");
+                $("#txtAddress").val("");
+
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    Name : <input id="txtName" type="text" />
+    Address : <textarea id="txtAddress"></textarea>
+    <button id="btn">Click Here</button>
+    <p id="output">
+
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Document</title>
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#btn").click(function (){
+                var fname = $("#fname").val();
+                var lname = $("#lname").val();
+
+                $.get("backend.php?fname="+fname+"&lname="+lname,function (data,status){
+                    if (status == "success"){
+                        $("#output").html(data);
+                    }
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <label>First Name : </label><input type="text" id="fname"><br/><br/>
+    <label>Last Name : </label><input type="text" id="lname"><br/><br/>
+    <button id="btn">Click</button>
+   <p id="output"></p>
+</body>
+
+</html>
